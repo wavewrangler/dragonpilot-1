@@ -38,13 +38,20 @@ class CarInterface(CarInterfaceBase):
       ret.lateralTuning.pid.kiBP, ret.lateralTuning.pid.kpBP = [[9., 22.], [9., 22.]]
       ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.2, 0.35], [0.05, 0.09]]
     elif candidate == CAR.SONATA:
-      ret.lateralTuning.pid.kf = 0.00005
-      ret.mass = 1513. + STD_CARGO_KG
+      ret.lateralTuning.init('indi')
+      ret.lateralTuning.indi.innerLoopGain = 1.62 # was 3 was 4 outer and inner are gains. Higher values = more steering 
+      ret.lateralTuning.indi.outerLoopGain = 4.05 # was 2.0 outer and inner are gains. Higher values = more steering
+      ret.lateralTuning.indi.timeConstant = 1.49 # was 1.60 was 1.49, responded to bumps. was 1.0 timeconstant is smoothing. Higher values == more smoothing
+      ret.lateralTuning.indi.actuatorEffectiveness = 1.62 # was 1.5 how much it steers. Lower values == more steering
+      ret.steerActuatorDelay = 0.52 # 0.53 was 0.56 was 0.52 was 0.6 - 0.08 on tunder
+      #ret.steerLimitTimer = 0.4 # was 0.4 stock is 0.01, 0.4 works well, trying 0.2, 0.1 for quicker turn in.  0.1 is strong on highway, notchy in town
+      #ret.lateralTuning.pid.kf = 0.00005
+      ret.mass = 1516. + STD_CARGO_KG #was 1513 
       ret.wheelbase = 2.84
-      ret.steerRatio = 13.27 * 1.15   # 15% higher at the center seems reasonable
+      ret.steerRatio = 13.27 * 1.15   # 15% higher at the center seems reasonable - may need to turn this off 
       tire_stiffness_factor = 0.65
-      ret.lateralTuning.pid.kiBP, ret.lateralTuning.pid.kpBP = [[0.], [0.]]
-      ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.25], [0.05]]
+      #ret.lateralTuning.pid.kiBP, ret.lateralTuning.pid.kpBP = [[0.], [0.]]
+      #ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.25], [0.05]]
     elif candidate == CAR.SONATA_2019:
       ret.lateralTuning.pid.kf = 0.00005
       ret.mass = 4497. * CV.LB_TO_KG
