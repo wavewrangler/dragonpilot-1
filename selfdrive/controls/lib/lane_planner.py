@@ -4,7 +4,7 @@ from cereal import log
 import cereal.messaging as messaging
 from common.realtime import sec_since_boot
 
-CAMERA_OFFSET = 0.06  # m from center car to camera
+CAMERA_OFFSET = -0.04  # was 0.06 m from center car to camera
 
 
 def compute_path_pinv(l=50):
