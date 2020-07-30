@@ -42,7 +42,7 @@ class CarInterface(CarInterfaceBase):
       ret.lateralTuning.indi.innerLoopGain = 2.2 # 1.62 was 3 was 4 outer and inner are gains. Higher values = more steering 
       ret.lateralTuning.indi.outerLoopGain = 3.0 # 3.5 was 4.05 2.0 outer and inner are gains. Higher values = more steering
       ret.lateralTuning.indi.timeConstant = 1.3 # was 1.75 was 1.49 was 1.60 was 1.49, responded to bumps. was 1.0 timeconstant is smoothing. Higher values == more smoothing
-      ret.lateralTuning.indi.actuatorEffectiveness = 1.45 # 1.62 was 1.5 how much it steers. Lower values == more steering
+      ret.lateralTuning.indi.actuatorEffectiveness = 1.1 # 1.45 1.62 was 1.5 how much it steers. Lower values == more steering
       ret.steerActuatorDelay = 0.2 # .52 0.53 was 0.56 was 0.52 was 0.6 - 0.08 on tunder
       ret.steerLimitTimer = 0.4 # was 0.4 stock is 0.01, 0.4 works well, trying 0.2, 0.1 for quicker turn in.  0.1 is strong on highway, notchy in town
       #ret.lateralTuning.pid.kf = 0.00005
