@@ -40,15 +40,15 @@ class CarInterface(CarInterfaceBase):
     elif candidate == CAR.SONATA:
       ret.lateralTuning.init('indi')
       ret.lateralTuning.indi.innerLoopGain = 2.2 # 1.62 was 3 was 4 outer and inner are gains. Higher values = more steering 
-      ret.lateralTuning.indi.outerLoopGain = 2.8 # was 3.0 - good. kinda twitchy 3.5 was 4.05 2.0 outer and inner are gains. Higher values = more steering
-      ret.lateralTuning.indi.timeConstant = 1.3 # was 1.75 was 1.49 was 1.60 was 1.49, responded to bumps. was 1.0 timeconstant is smoothing. Higher values == more smoothing
-      ret.lateralTuning.indi.actuatorEffectiveness = 1.2 # was 1.1 - almost good, tad too much power 1.45 1.62 was 1.5 how much it steers. Lower values == more steering
+      ret.lateralTuning.indi.outerLoopGain = 2.9 # 2.8 was 3.0 - good. kinda twitchy 3.5 was 4.05 2.0 outer and inner are gains. Higher values = more steering
+      ret.lateralTuning.indi.timeConstant = 1.5 #1.3 was 1.75 was 1.49 was 1.60 was 1.49, responded to bumps. was 1.0 timeconstant is smoothing. Higher values == more smoothing
+      ret.lateralTuning.indi.actuatorEffectiveness = 1.0 # 1.2 was 1.1 - almost good, tad too much power 1.45 1.62 was 1.5 how much it steers. Lower values == more steering
       ret.steerActuatorDelay = 0.16 # 0.2, tad too early steer .52 0.53 was 0.56 was 0.52 was 0.6 - 0.08 on tunder
-      ret.steerLimitTimer = 0.3 ####changed before leaving 309AM7/30 was 0.4 stock is 0.01, 0.4 works well, trying 0.2, 0.1 for quicker turn in.  0.1 is strong on highway, notchy in town
+      ret.steerLimitTimer = 0.4 ####changed before leaving 309AM7/30 was 0.4 stock is 0.01, 0.4 works well, trying 0.2, 0.1 for quicker turn in.  0.1 is strong on highway, notchy in town
       #ret.lateralTuning.pid.kf = 0.00005
       ret.mass = 1516. + STD_CARGO_KG #was 1513 
       ret.wheelbase = 2.84
-      ret.steerRatio = 13.27 * 1.15   # 15% higher at the center seems reasonable - may need to turn this off 
+      ret.steerRatio = 13.27 * 1.15   # 15% higher at the center seems reasonable - may need to turn this off or change?????
       tire_stiffness_factor = 0.65
       #ret.lateralTuning.pid.kiBP, ret.lateralTuning.pid.kpBP = [[0.], [0.]]
       #ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.25], [0.05]]
