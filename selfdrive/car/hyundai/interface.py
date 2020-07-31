@@ -49,7 +49,7 @@ class CarInterface(CarInterfaceBase):
       ret.mass = 1516. + STD_CARGO_KG #was 1513 
       ret.wheelbase = 2.84
       ret.steerRatio = 15.4192  # was 13.27 * 1.15. this comes from live params
-      tire_stiffness_factor = 199 # was 0.65 this comes from live params
+      tire_stiffness_factor = 1.00 # was 0.65 this comes from live params
       #ret.lateralTuning.pid.kiBP, ret.lateralTuning.pid.kpBP = [[0.], [0.]]
       #ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.25], [0.05]]
     elif candidate == CAR.SONATA_2019:
